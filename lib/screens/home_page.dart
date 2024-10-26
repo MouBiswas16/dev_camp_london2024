@@ -46,6 +46,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.blue,
@@ -147,7 +151,9 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => MentorsDetails(),
+                        builder: (context) => MentorsDetails(
+                          mentorModel: mentorModel[index],
+                        ),
                       ),
                     );
                   },
